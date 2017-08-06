@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Animate_Images" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,71 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame_2_delay-0.08s.gif" translatesAutoresizingMaskIntoConstraints="NO" id="sHw-lR-h2E">
+                                <rect key="frame" x="0.0" y="131" width="375" height="312"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="312" id="rrn-dS-d5n"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCO-Fo-Eui">
+                                <rect key="frame" x="136.5" y="73" width="102" height="30"/>
+                                <state key="normal" title="Play Animation"/>
+                                <connections>
+                                    <action selector="btnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l7e-H9-Hjp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuV-gb-sIF">
+                                <rect key="frame" x="70" y="485" width="52" height="30"/>
+                                <state key="normal" title="Fade IN"/>
+                                <connections>
+                                    <action selector="Fadein:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vjL-c0-6jS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evK-kN-eeA">
+                                <rect key="frame" x="162" y="485" width="50" height="30"/>
+                                <state key="normal" title="Slide in"/>
+                                <connections>
+                                    <action selector="Slidein:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IH0-75-1xs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfX-pN-gln">
+                                <rect key="frame" x="257" y="485" width="36" height="30"/>
+                                <state key="normal" title="Grow"/>
+                                <connections>
+                                    <action selector="Grow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k0Q-j7-7sh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="evK-kN-eeA" firstAttribute="leading" secondItem="xuV-gb-sIF" secondAttribute="trailing" constant="40" id="2gi-k8-PT7"/>
+                            <constraint firstItem="sHw-lR-h2E" firstAttribute="top" secondItem="xCO-Fo-Eui" secondAttribute="bottom" constant="28" id="AoK-Pg-gg7"/>
+                            <constraint firstItem="BfX-pN-gln" firstAttribute="leading" secondItem="evK-kN-eeA" secondAttribute="trailing" constant="45" id="DHc-zn-wek"/>
+                            <constraint firstItem="BfX-pN-gln" firstAttribute="leading" secondItem="evK-kN-eeA" secondAttribute="trailing" constant="45" id="FB3-tI-wdQ"/>
+                            <constraint firstItem="xCO-Fo-Eui" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="53" id="MAQ-bZ-PVq"/>
+                            <constraint firstItem="BfX-pN-gln" firstAttribute="top" secondItem="sHw-lR-h2E" secondAttribute="bottom" constant="42" id="S7u-GA-kiN"/>
+                            <constraint firstItem="evK-kN-eeA" firstAttribute="leading" secondItem="xuV-gb-sIF" secondAttribute="trailing" constant="40" id="XKJ-ar-HqE"/>
+                            <constraint firstItem="sHw-lR-h2E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="h00-Jb-sCZ"/>
+                            <constraint firstAttribute="trailing" secondItem="sHw-lR-h2E" secondAttribute="trailing" id="jEa-7i-XSG"/>
+                            <constraint firstItem="xuV-gb-sIF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="kw0-jW-kqQ"/>
+                            <constraint firstItem="xCO-Fo-Eui" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n5Z-qf-Tk9"/>
+                            <constraint firstItem="xuV-gb-sIF" firstAttribute="top" secondItem="sHw-lR-h2E" secondAttribute="bottom" constant="42" id="pGU-zw-Y1p"/>
+                            <constraint firstItem="evK-kN-eeA" firstAttribute="top" secondItem="sHw-lR-h2E" secondAttribute="bottom" constant="42" id="ru8-mU-QoM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BfX-pN-gln" secondAttribute="trailing" constant="66" id="vSf-Ys-1aU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonOutlet" destination="xCO-Fo-Eui" id="PEd-Gz-iew"/>
+                        <outlet property="imgFrame" destination="sHw-lR-h2E" id="CSc-Ba-ptb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="frame_2_delay-0.08s.gif" width="287" height="400"/>
+    </resources>
 </document>
